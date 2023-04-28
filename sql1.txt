@@ -1,0 +1,104 @@
+-- create database
+-- create database rgm;
+
+create table student(
+studentID int primary key not null,
+studentName varchar(30) not null,
+studentContact int not null,
+studentDEpt varchar(30) not null
+
+);
+-- SELECT * FROM  student;
+INSERT INTO student VALUES(532,"dee",123456778,"cse");
+INSERT INTO student VALUES(535,"deepthi",123456788,"cse");
+
+
+INSERT INTO student VALUES(530,"deeksha",817965879,"cse");
+select * from student;
+INSERT INTO student VALUES
+(501,"A",357252718,"cse"),(502,"B",39317847,"cse");
+
+
+select * from rgm;
+select * from rgm where Address = "Nandyal";
+select Name,college from rgm where Address="Nandyal";
+select * from rgm where Session = "herovired" AND Address = "Nandyal";
+-- to see name starts with letter --
+select * from rgm where Name LIKE "De%";
+-- to see name ending with given letter --
+select * from rgm where Name LIKE "a%";
+-- we know second letter --
+select * from rgm where Name LIKE "_r%";
+select * from rgm where Name LIKE "__u%";
+select * from rgm where Name LIKE "_u%";
+-- if we don't want name starts with we use NOT LIKE --
+select * from rgm where Name NOT LIKE "a%";
+select * from rgm;
+insert into rgm values("shiva","abc","java",734784373,"hyderabad");
+select * from rgm where Address IN ("nandyal","atp");
+select * from rgm where College = "RGM" OR College="abc";
+
+-- creating new table --
+create table student2(ID int not null,Name varchar(30),Marks int);
+select * from student2;
+-- inserting values into table --
+insert into student2 values(101,"Deeksha",90);
+insert into student2 values(102,"teju",85);
+insert into student2 values(103,"shashi",80);
+insert into student2 values(104,"shiva",74);
+insert into student2 values(105,"manasa",60);
+select * from student2;
+select * from student2 where marks = 74;
+select * from student2 where marks <= 74;
+select * from student2 where marks > 74;
+select * from student2 where Name >= 's';
+
+-- != and <> both work as same --
+select * from student2 where marks != 74;
+select * from student2 where marks <> 74;
+select * from student2 where Marks BETWEEN 74 AND 90;
+
+-- to get  marks in ascending order --
+-- BY default by using oreder by gives in ascending order if we use asc also gives in ascending oreder --
+select * from student2 where marks BETWEEN 74 AND 90 ORDER BY Marks;
+select * from student2 where marks BETWEEN 74 AND 90 ORDER BY Marks ASC;
+-- to get marks in desecending oreder --
+select * from student2 where marks BETWEEN 74 AND 90 ORDER BY Marks DESC;
+select * from student2 where not marks = 74;
+
+
+select * from rgm;
+select DISTINCT Address from rgm;
+-- to count distinct address --
+select count(DISTINCT Address) from rgm;
+
+select * from student2;
+select * from student2 where not marks=90 and not marks=74;
+
+-- it shows first 3 rows --
+select * from rgm LIMIT 3;
+select * from rgm where Address="Nandyal"  LIMIT 2;
+
+select Address from rgm group by Address;
+select  * from rgm;
+select name from rgm group by name;
+select count(Address), Address from rgm group by Address;
+select * from rgm where college = "rgm" order by name DESC LIMIT 5;
+
+create table DOB(date_ DATE NOT null);
+insert into DOB values('2023-04-28');
+select * from dob;
+
+create table salesman(salesman_id int ,name varchar(30),city varchar(30),Commission float);
+insert into salesman values(5001,"James HOOg","New York",0.15);
+insert into salesman values(5002,"Nail knite","paris",0.13);
+insert into salesman values(5003,"MC LYON","LOndon",0.11);
+select name,commission from salesman;
+
+
+
+
+
+
+
+
